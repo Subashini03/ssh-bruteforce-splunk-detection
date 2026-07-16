@@ -70,7 +70,7 @@ index=main sourcetype=linux_secure "Failed password"
 | **Severity** | *(Low/Medium/High — justify your rating)* |
 
 **Findings:**
-*(2–3 sentences: what the logs showed, how you confirmed it was brute-force activity and not legitimate user error)*
+*The logs showed 6 failed SSH login attempts against the labuser account, all originating from a single source IP (192.168.197.128) within a span of under one second, immediately followed by a successful login. This pattern is rapid, sequential attempts with no delay between them is inconsistent with a human mistyping a password, which would typically show longer gaps and far fewer attempts. The speed and volume confirmed this was automated credential-guessing (Hydra) rather than legitimate user error.*
 
 **Recommendation:**
 *(e.g., implement fail2ban, enforce key-based auth, rate-limit or geo-block source IP, lower alert threshold)*
@@ -91,7 +91,9 @@ index=main sourcetype=linux_secure "Failed password"
 
 ##  Lessons Learned
 
-*(2–4 sentences: what surprised you, what you'd tune differently, what a false positive might look like for this detection)*
+*Building this lab taught me that SIEM deployments rarely work out of the box the way tutorials suggest.
+I had to troubleshoot real infrastructure issues including disk space limits during installation, service account permissions blocking log access, and a default sourcetype that didn't automatically extract the fields I needed, requiring a manual rex extraction instead. 
+I also learned that a "false positive" for this specific detection would likely be a legitimate user who mistypes their password 3-4 times in a row, which is why tuning the threshold (count > 3) matters, and why a real analyst would want additional context (like geolocation or time-of-day) before treating every alert as confirmed malicious.*
 
 ## 🔗 Next Steps
 
