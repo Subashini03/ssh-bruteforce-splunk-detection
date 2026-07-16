@@ -8,7 +8,7 @@ Simulate a common attack technique (SSH brute-force) against a target host, inge
 
 **MITRE ATT&CK mapping:** T1110 – Brute Force
 
-## 🧱 Lab Architecture
+##  Lab Architecture
 
 ```
 [Attacker VM: Kali Linux] ---> SSH attempts ---> [Victim VM: Ubuntu/Linux Server]
@@ -36,7 +36,7 @@ Simulate a common attack technique (SSH brute-force) against a target host, inge
 | Splunk Free | Log ingestion, search, dashboards, alerting |
 | Splunk Universal Forwarder | Ships `auth.log` from victim to Splunk |
 
-## 🚧 Build Steps
+##  Build Steps
 
 1. Stood up two VMs (attacker + victim) on an isolated host-only network
 2. Installed and configured Splunk Universal Forwarder on the victim to forward `/var/log/auth.log`
@@ -59,7 +59,7 @@ index=main sourcetype=linux_secure "Failed password"
 
 **Alert condition:** Trigger when a single source IP exceeds 5 failed login attempts within a 5-minute window, optionally followed by a successful login (indicating a compromised credential).
 
-## 📋 Investigation Report
+##  Investigation Report
 
 | Field | Detail |
 |---|---|
@@ -81,7 +81,7 @@ index=main sourcetype=linux_secure "Failed password"
 
 
 
-## 💡 Lessons Learned
+##  Lessons Learned
 
 *(2–4 sentences: what surprised you, what you'd tune differently, what a false positive might look like for this detection)*
 
