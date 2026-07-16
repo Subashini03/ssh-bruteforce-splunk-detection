@@ -61,13 +61,13 @@ index=main sourcetype=linux_secure "Failed password"
 
 | Field | Detail |
 |---|---|
-| **Alert** | Multiple failed SSH login attempts from single source |
-| **Source IP** | *(fill in)* |
-| **Target** | *(fill in — victim hostname/IP)* |
-| **Time window** | *(fill in)* |
-| **Attempts observed** | *(fill in count)* |
-| **Outcome** | *(fill in — was it a successful compromise or blocked?)* |
-| **Severity** | *(Low/Medium/High — justify your rating)* |
+| **Alert** | Multiple failed SSH login attempts from single source, followed by a successful login |
+| **Source IP** | *192.168.197.128 (Kali attacker VM)* |
+| **Target** | *soc-victim (192.168.197.131)* |
+| **Time window** | *6 attempts within under 1 second (02:12:53 – 02:12:54 UTC)* |
+| **Attempts observed** | *6 failed attempts, followed by 1 successful login* |
+| **Outcome** | *Successful compromise ; Hydra correctly guessed the account password (admin) from a test wordlist* |
+| **Severity** | *High -a weak, easily-guessable password allowed full account compromise within seconds of the attack starting* |
 
 **Findings:**
 *The logs showed 6 failed SSH login attempts against the labuser account, all originating from a single source IP (192.168.197.128) within a span of under one second, immediately followed by a successful login. This pattern is rapid, sequential attempts with no delay between them is inconsistent with a human mistyping a password, which would typically show longer gaps and far fewer attempts. The speed and volume confirmed this was automated credential-guessing (Hydra) rather than legitimate user error.*
