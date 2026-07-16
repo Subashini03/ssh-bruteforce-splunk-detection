@@ -55,8 +55,6 @@ index=main sourcetype=linux_secure "Failed password"
 | where count > 5
 ```
 
-> *(Replace with your actual working query once tested — include a screenshot of the search results)*
-
 **Alert condition:** Trigger when a single source IP exceeds 5 failed login attempts within a 5-minute window, optionally followed by a successful login (indicating a compromised credential).
 
 ##  Investigation Report
