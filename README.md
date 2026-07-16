@@ -25,7 +25,7 @@ Simulate a common attack technique (SSH brute-force) against a target host, inge
 - **SIEM:** Splunk Free (Universal Forwarder → Indexer)
 - **Network:** Isolated internal/host-only network (VirtualBox/VMware)
 
-> *(Add a network diagram screenshot here once your lab is running)*
+<!--> *(Add a network diagram screenshot here once your lab is running)* -->
 
 ## 🛠️ Tools Used
 
