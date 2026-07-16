@@ -78,7 +78,17 @@ index=main sourcetype=linux_secure "Failed password"
 *(e.g., implement fail2ban, enforce key-based auth, rate-limit or geo-block source IP, lower alert threshold)*
 
 ## 📸 Screenshots
+**Hydra brute-force attack against the victim host**
+![Hydra attack output](hydra-attack.png)
 
+**Raw failed login events captured in Splunk**
+![Splunk raw events](splunk-raw-events.png)
+
+<!--**Detection query with extracted fields (src_ip, user)**
+![Detection query results](detection-query.png)-->
+
+**Saved Splunk alert configuration**
+![Alert configuration](alert-config.png)
 
 
 ##  Lessons Learned
